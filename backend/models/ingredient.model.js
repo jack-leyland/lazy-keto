@@ -6,7 +6,7 @@ const ingredientSchema = new Schema ({
     desc: { type: String, required: false }, //might remove this for simplicity, will add UI complexity
     cost: { type: Number, required : false}, //will this type take floats?
     user: { type: String, required: true },
-    recipes: { type: Schema.Types.ObjectId, ref: 'Recipe', required: true }, // NEED EXISTING RECIPES TO TEST
+    recipes: { type: Schema.Types.ObjectId, ref: 'Recipe', required: true },
     buyLocation: { type: String, required : false}, //placeholder for future functionality
 }, {
     timestamps: true

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 let Recipe = require('../models/recipe.model');
+const e = require('express');
 
 router.route('/').get((req, res) => {
     Recipe.find()
@@ -42,6 +43,22 @@ router.route('/:id').delete((req, res) => {
         .catch( err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/update/:id').post((req, res) => {
+    Recipe.findById(req.params.id)
+        .then(recipe => { // see note in ingredient router for detail on how this functionality will likely be handled.
+            recipe.name =name = req.body.name;
+            recipe.desc = req.body.desc;
+            recipe.type = req.body.type;
+            recipe.time = Number(req.body.time);
+            recipe.steps = req.body.steps;
+            recipe.user = req.body.user;
 
+            recipe.save()
+                .then(() => res.json('Recipe updated'))
+                .catch( err => res.status(400).json('Error: ' + err));
+            
+        })
+        .catch( err => res.status(400).json('Error: ' + err));
+});
 
 module.exports = router; 

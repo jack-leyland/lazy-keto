@@ -12,7 +12,7 @@ const recipeRouter = require('./routes/recipes');
 const ingredientRouter = require('./routes/ingredients');
 
 const useLocalDB = true; //Toggle local development instance of MongoDB. 
-                        // TODO: Figure out how to sync atlas cluster to the local instance
+                        // TODO: Figure out how to sync atlas cluster data to the local instance
 
 app.use(cors());
 app.use(express.json());

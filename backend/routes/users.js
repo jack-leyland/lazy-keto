@@ -1,3 +1,5 @@
+/** THIS IS PLACEHOLDER FUNCTIONALITY UNTIL APP IS IN A WORKING STATE AND I CAN BUILD A USER AUTHENTICATION SYSTEM. */
+
 const router = require('express').Router();
 let User = require('../models/user.model');
 
@@ -16,5 +18,6 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('User add success'))
         .catch((err) => res.status(400).json('Error: ' + err));
 });
+
 
 module.exports = router;
