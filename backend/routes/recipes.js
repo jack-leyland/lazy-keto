@@ -33,7 +33,7 @@ router.route('/add').post((req, res) => {
 
 router.route('/:id').get((req, res) => {
     Recipe.findById(req.params.id)
-        .then(() => res.json(recipe))
+        .then((recipe) => res.json(recipe))
         .catch( err => res.status(400).json('Error: ' + err));
 });
 

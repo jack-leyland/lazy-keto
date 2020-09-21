@@ -25,23 +25,23 @@ router.route('/add').post((req, res) => {
         });
 
     newIngredient.save()
-        .then(() => res.json('Ingredient add sucess'))
+        .then(() => res.json('Ingredient add success'))
         .catch((err) => res.status(400).json('Error: ' + err));
 });
 
-router.route(':id').get((req, res) => {
+router.route('/:id').get((req, res) => {
     Ingredient.findById(req.params.id)
-        .then(() => res.json(ingredient))
+        .then((ingredient) => res.json(ingredient))
         .catch((err) => res.status(400).json('Error: ' + err));
 });
 
-router.route(':id').delete((req, res) => {
+router.route('/:id').delete((req, res) => {
     Ingredient.findByIdAndDelete(req.params.id)
         .then(() => res.json('Ingredient deleted.'))
         .catch((err) => res.status(400).json('Error: ' + err));
 });
 
-router.route('update/:id').post((req, res) => {
+router.route('/update/:id').post((req, res) => {
     Ingredient.findById(req.params.id)
     .then( ingredient => {
         ingredient.name = req.body.name;
@@ -58,7 +58,7 @@ router.route('update/:id').post((req, res) => {
          need to be updated before sending the request to the database. Probably won't be able to address that until I get to the front end. */ 
 
          ingredient.save()
-            .then(() => res.json('Ingredient saved.'))
+            .then(() => res.json('Ingredient updated.'))
             .catch((err) => res.status(400).json('Error: ' + err));
     })
     .catch( err => res.status(400).json('Error: ' + err));
