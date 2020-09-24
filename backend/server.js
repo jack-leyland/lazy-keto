@@ -11,33 +11,42 @@ const userRouter = require('./routes/users'); //routing middleware
 const recipeRouter = require('./routes/recipes');
 const ingredientRouter = require('./routes/ingredients');
 
-const useLocalDB = true; //Toggle local development instance of MongoDB. 
-                        // TODO: Figure out how to sync atlas cluster data to the local instance
+const useLocalDB = true; //Toggle local development instance of MongoDB.
+// TODO: Figure out how to sync atlas cluster data to the local instance
 
 app.use(cors());
 app.use(express.json());
 
-app.use('/', (req, res, next) => { //basic logging middleware to help with development
-    console.log(`${req.method} ${req.path} - ${req.ip}`);
-    next();
-  }); 
-
-if(useLocalDB) {
-    console.log('Connecting to local cluster');
-    mongoose.connect(localUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-} else {
-    console.log('Connecting to Atlas cluster');
-    mongoose.connect(atlasUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }); 
-};
-
-db.once('open', () => {
-    console.log('DB Connection Successful!');
+app.use('/api', (req, res, next) => {
+  //basic logging middleware to help with development
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
 });
 
-app.use('/users', userRouter);
-app.use('/recipes', recipeRouter);
-app.use('/ingredients', ingredientRouter);
+if (useLocalDB) {
+  console.log('Connecting to local cluster');
+  mongoose.connect(localUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  });
+} else {
+  console.log('Connecting to Atlas cluster');
+  mongoose.connect(atlasUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  });
+}
+
+db.once('open', () => {
+  console.log('DB Connection Successful!');
+});
+
+app.use('api/users', userRouter); //Surely there is a cleaner way to do this? Revisit if API gets any more complex.
+app.use('api/recipes', recipeRouter);
+app.use('api/ingredients', ingredientRouter);
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
