@@ -9,7 +9,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  color: $grey-font;
+  color: $grey;
 
   .wrapper {
     text-align: center;
@@ -18,7 +18,7 @@
       display: inline-block;
       vertical-align: middle;
       padding-right: 5px;
-      border-right: 1px solid $grey-font;
+      border-right: 1px solid $grey;
     }
 
     .socials {

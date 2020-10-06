@@ -4,6 +4,17 @@
   position: relative;
 }
 
+.background {
+  .top-wave {
+    fill: $primary;
+    fill-opacity: 0.9;
+  }
+  .bottom-wave {
+    fill: $primary-dark;
+    fill-opacity: 0.9;
+  }
+}
+
 //TODO: Media queries for mobile. Animations. Scaling improvements.
 
 //Logo design is gonna need some more work but this is good enough to move on. Might need to just make a png
@@ -63,7 +74,7 @@
 
   span {
     font-family: $primary-font;
-    color: Black;
+    color: $grey;
     font-size: 2vw; //add better scaling with a base size and Calc
     white-space: nowrap;
     text-align: center;
@@ -79,6 +90,7 @@
 
     svg {
       width: 100%;
+      stroke: $grey;
     }
   }
   .generate {
@@ -87,6 +99,7 @@
 
     svg {
       width: 100%;
+      stroke: $grey;
     }
   }
   .resources {
@@ -95,6 +108,7 @@
 
     svg {
       width: 100%;
+      stroke: $grey;
     }
   }
 }

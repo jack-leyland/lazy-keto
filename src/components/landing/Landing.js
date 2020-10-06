@@ -5,7 +5,7 @@ import {
   Recipe as RecipesIcon,
   Resources as ResourcesIcon,
 } from '../../assets/index';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Landing() {
   return (
@@ -13,13 +13,12 @@ function Landing() {
       <Background />
       <Title />
       <div className={styles.menu}>
-        <Router>
+        <Link to="/recipes">
           <div className={styles.recipes}>
             <span>Recipes</span>
-            <RecipesIcon to="/recipes" />
+            <RecipesIcon />
           </div>
-        </Router>
-
+        </Link>
         <div className={styles.generate}>
           <span>Generate Meal</span>
           <GenerateIcon />
@@ -54,19 +53,13 @@ function Title() {
 function Background() {
   return (
     <div className={styles.background}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 370 150"
-        preserveAspectRatio="none"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 150">
         <path
-          fill="#1c7c54"
-          fillOpacity=".9"
+          className={styles['bottom-wave']}
           d="M-14.11,94.23 C69.41,59.70 460.49,71.53 419.86,-57.73 L546.27,-29.12 L0.00,0.00 Z"
         ></path>
         <path
-          fill="#73e2a7"
-          fillOpacity=".9"
+          className={styles['top-wave']}
           d="M-8.47,44.90 C75.05,197.85 259.59,-42.93 590.86,4.43 L502.25,-27.15 L0.00,0.00 Z"
         ></path>
       </svg>
