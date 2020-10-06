@@ -1,7 +1,6 @@
 import React from 'react';
 
 function GenerateIcon(props) {
-  // a viewbox height/width is passed. Allows for more sizing options and ensure icon viewbox is always a square
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
