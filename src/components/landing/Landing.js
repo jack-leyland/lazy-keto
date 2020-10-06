@@ -13,22 +13,45 @@ function Landing() {
       <Background />
       <Title />
       <div className={styles.menu}>
-        <Link to="/recipes">
-          <div className={styles.recipes}>
-            <span>Recipes</span>
-            <RecipesIcon />
-          </div>
-        </Link>
-        <div className={styles.generate}>
-          <span>Generate Meal</span>
-          <GenerateIcon />
-        </div>
-        <div className={styles.resources}>
-          <span>Resources</span>
-          <ResourcesIcon />
-        </div>
+        <RecipesButton />
+        <GenerateButton />
+        <ResourcesButton />
       </div>
     </div>
+  );
+}
+
+//Nav buttons - not reused anywhere yet so keeping these within this file
+
+function RecipesButton() {
+  return (
+    <Link to="/recipes">
+      <div className={styles.recipes}>
+        <span>Recipes</span>
+        <RecipesIcon />
+      </div>
+    </Link>
+  );
+}
+function GenerateButton() {
+  return (
+    <Link to="/generate">
+      <div className={styles.generate}>
+        <span>Generate Meal</span>
+        <GenerateIcon />
+      </div>
+    </Link>
+  );
+}
+
+function ResourcesButton() {
+  return (
+    <Link to="/resources">
+      <div className={styles.resources}>
+        <span>Resources</span>
+        <ResourcesIcon />
+      </div>
+    </Link>
   );
 }
 

@@ -1,19 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Recipes, Resources, Generate, Landing, Footer } from '../index';
-
-//will eventually need to import logos
+import {
+  Recipes,
+  Resources,
+  Generate,
+  Landing,
+  Footer,
+  Header,
+} from '../index';
 
 function App() {
   return (
-    <div className="appContainer">
+    <div className="app-container">
       <Router>
-        <Route exact path="/" component={Landing} />
-        <Route path="/recipes" component={Recipes} />
-        <Route path="/resources" component={Resources} />
-        <Route path="/generate" component={Generate} />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route component={WithHeader} />
+        </Switch>
+        <Footer />
       </Router>
-      <Footer />
+    </div>
+  );
+}
+
+function WithHeader() {
+  return (
+    <div>
+      <Header />
+      <Route path="/recipes" component={Recipes} />
+      <Route path="/resources" component={Resources} />
+      <Route path="/generate" component={Generate} />
     </div>
   );
 }
