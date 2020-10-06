@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
 
-// Global Colors
-$primary-background: #ffffff;
-$footer-background: #474646;
-$primary-font-color: #000000;
-$footer-font-color: #ffffff;
+// Global Color Scheme
+$primary: #73e2a7;
+$primary-dark: #1c7c54;
+$primary-lightest: #def4c6;
+$dark-accent: #1b512d;
+$light-accent: #b1cf5f;
+$background: #f5fcee;
+
+$grey-font: #5a5a5a;
 
 //Global Fonts
 $logo-font: 'Ubuntu';
@@ -19,8 +23,10 @@ $primary-font: 'Roboto';
 }
 
 body {
-  background-color: $primary-background;
+  background-color: $background;
   height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 //TODO: Conditional styling on body element. Apply the below only on the landing page:

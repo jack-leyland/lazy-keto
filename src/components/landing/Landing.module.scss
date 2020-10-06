@@ -1,35 +1,100 @@
 @import '../../index.scss';
 
-.container {
+.landing {
+  position: relative;
+}
+
+//TODO: Media queries for mobile. Animations. Scaling improvements.
+
+//Logo design is gonna need some more work but this is good enough to move on. Might need to just make a png
+//to resolve some of the alignment issues. Doing it all in CSS might be overkill
+
+.title {
   position: absolute;
-  top: 20%;
+  top: 8vh;
+  left: 12vw;
+  .wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 25vw;
+    text-align: left;
+    color: $background;
+
+    .title-wrapper {
+      flex: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: left;
+      font-size: 80px; //add scaling or just media query?
+      font-family: 'Ubuntu';
+      font-weight: 500;
+      position: relative;
+      padding-right: 10px; //add scaling or just media query?
+      border-right: 3px solid $background;
+    }
+
+    .subtitle-wrapper {
+      flex: 2;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-content: left;
+      font-family: 'Roboto';
+      font-size: 25px; //add scaling or just media query?
+      padding-left: 10px; //add scaling or just media query?
+      .subtitle {
+        padding: 5px; //add scaling or just media query?
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60vw; //add better scaling with a base size and Calc
+  top: 56vh; //add better scaling with a base size and Calc
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-color: #b8b7b7;
-  padding: 10px;
-  padding-bottom: 15px;
-  border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
-  // Will eventually need to incorporate some media queries to cut off font resizing after a certain point.
-  // This will probably only be imporant once I get to mobile compatibility, so will address at that point.
-  .title {
-    font-family: $logo-font !important;
-    font-weight: 400;
-    font-size: 6vw;
-    // text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2),
-    //   0px -2px 6px rgba(255, 255, 255, 0.2);
-  }
-  .subtitle {
+
+  span {
     font-family: $primary-font;
-    font-weight: 400;
-    font-size: 1.5vw;
-    // text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3),
-    //   0px -2px 6px rgba(255, 255, 255, 0.3);
+    color: Black;
+    font-size: 2vw; //add better scaling with a base size and Calc
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .recipes {
+    width: 11vw;
+    margin: 0 4vw 0;
+
+    svg {
+      width: 100%;
+    }
+  }
+  .generate {
+    width: 11vw;
+    margin: 0 4vw 0;
+
+    svg {
+      width: 100%;
+    }
+  }
+  .resources {
+    width: 11vw;
+    margin: 0 4vw 0;
+
+    svg {
+      width: 100%;
+    }
   }
 }

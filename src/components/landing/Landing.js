@@ -1,19 +1,75 @@
 import React from 'react';
 import styles from './Landing.module.scss';
+import {
+  Generate as GenerateIcon,
+  Recipe as RecipesIcon,
+  Resources as ResourcesIcon,
+} from '../../assets/index';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function Landing() {
-  return <LandingTitle />;
-}
-
-function LandingTitle() {
   return (
-    <div>
-      <div className={styles.container}>
-        <div className={styles.title}>Lazy Keto</div>
-        <div className={styles.subtitle}>
-          The cool catchphrase is on the way (so is the logo)
+    <div className={styles.landing}>
+      <Background />
+      <Title />
+      <div className={styles.menu}>
+        <Router>
+          <div className={styles.recipes}>
+            <span>Recipes</span>
+            <RecipesIcon to="/recipes" />
+          </div>
+        </Router>
+
+        <div className={styles.generate}>
+          <span>Generate Meal</span>
+          <GenerateIcon />
+        </div>
+        <div className={styles.resources}>
+          <span>Resources</span>
+          <ResourcesIcon />
         </div>
       </div>
+    </div>
+  );
+}
+
+function Title() {
+  return (
+    <div className={styles.title}>
+      <div className={styles.wrapper}>
+        <div className={styles['title-wrapper']}>
+          <span className={styles['title-1']}>Lazy</span>
+          <span className={styles['title-2']}>Keto</span>
+        </div>
+        <div className={styles['subtitle-wrapper']}>
+          <span className={styles.subtitle}>Think less.</span>
+          <span className={styles.subtitle}>Wait less.</span>
+          <span className={styles.subtitle}>Weigh less.</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Background() {
+  return (
+    <div className={styles.background}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 370 150"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#1c7c54"
+          fillOpacity=".9"
+          d="M-14.11,94.23 C69.41,59.70 460.49,71.53 419.86,-57.73 L546.27,-29.12 L0.00,0.00 Z"
+        ></path>
+        <path
+          fill="#73e2a7"
+          fillOpacity=".9"
+          d="M-8.47,44.90 C75.05,197.85 259.59,-42.93 590.86,4.43 L502.25,-27.15 L0.00,0.00 Z"
+        ></path>
+      </svg>
     </div>
   );
 }
