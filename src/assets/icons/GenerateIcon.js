@@ -3,6 +3,7 @@ import React from 'react';
 function GenerateIcon(props) {
   return (
     <svg
+      className={props.styling}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       strokeWidth="1.5"

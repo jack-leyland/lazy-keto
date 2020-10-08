@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Landing.module.scss';
 import {
-  GenerateButton,
-  RecipesButton,
-  ResourcesButton,
-} from '../buttons/Buttons';
+  Generate as GenerateIcon,
+  Recipe as RecipeIcon,
+  Resources as ResourcesIcon,
+} from '../../assets/index';
 import { Link } from 'react-router-dom';
 
 function Landing() {
@@ -12,11 +12,7 @@ function Landing() {
     <div className={styles.landing}>
       <Background />
       <Title />
-      <div className={styles.menu}>
-        <RecipesButton styling={styles['recipes-button']} />
-        <GenerateButton styling={styles['generate-button']} />
-        <ResourcesButton styling={styles['resources-button']} />
-      </div>
+      <Menu />
     </div>
   );
 }
@@ -35,6 +31,31 @@ function Title() {
           <span className={styles.subtitle}>Weigh less.</span>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Menu() {
+  return (
+    <div className={styles.menu}>
+      <Link to="/recipes">
+        <div className={styles['recipes-button']}>
+          <span>Recipes</span>
+          <RecipeIcon />
+        </div>
+      </Link>
+      <Link to="/generate">
+        <div className={styles['generate-button']}>
+          <span>Generate Meal</span>
+          <GenerateIcon />
+        </div>
+      </Link>
+      <Link to="/resources">
+        <div className={styles['resources-button']}>
+          <span>Resources</span>
+          <ResourcesIcon />
+        </div>
+      </Link>
     </div>
   );
 }
