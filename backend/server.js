@@ -43,9 +43,9 @@ db.once('open', () => {
   console.log('DB Connection Successful!');
 });
 
-app.use('api/users', userRouter); //Surely there is a cleaner way to do this? Revisit if API gets any more complex.
-app.use('api/recipes', recipeRouter);
-app.use('api/ingredients', ingredientRouter);
+app.use('/api/users', userRouter); //Surely there is a cleaner way to do this? Revisit if API gets any more complex.
+app.use('/api/recipes', recipeRouter);
+app.use('/api/ingredients', ingredientRouter);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

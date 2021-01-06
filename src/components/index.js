@@ -5,8 +5,3 @@ export { default as Resources } from './resources/Resources.js';
 export { default as Landing } from './landing/Landing.js';
 export { default as Footer } from './footer/Footer.js';
 export { default as Header } from './header/Header.js';
-export {
-  RecipesButton,
-  GenerateButton,
-  ResourcesButton,
-} from './buttons/Buttons';

@@ -1,6 +1,5 @@
 const router = require('express').Router();
-let Recipe = require('../models/recipe.model');
-const e = require('express');
+let Recipe = require('../models/recipe.model').Recipe;
 
 router.route('/').get((req, res) => {
     Recipe.find()
@@ -46,7 +45,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Recipe.findById(req.params.id)
         .then(recipe => { // see note in ingredient router for detail on how this functionality will likely be handled.
-            recipe.name =name = req.body.name;
+            recipe.name = req.body.name;
             recipe.desc = req.body.desc;
             recipe.type = req.body.type;
             recipe.time = Number(req.body.time);

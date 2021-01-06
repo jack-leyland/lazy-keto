@@ -17,7 +17,13 @@ function Header() {
 }
 
 function Logo() {
-  return <div className={styles.logo}>Lazy Keto</div>;
+  return (
+    <div>
+      <Link to="/">
+        <div className={styles.logo}>Lazy Keto</div>
+      </Link>
+    </div>
+  );
 }
 
 function Nav() {
