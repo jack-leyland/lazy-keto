@@ -21,31 +21,6 @@
         <g id="Desktop">
             <path d="M-9.09494702e-13,300 C172.121408,265.51448 347.822768,240.572944 527.104079,225.175392 C654.693607,214.217383 893.651801,200.093299 1109.5043,149.912972 C1263.42565,114.130093 1373.59088,86.6710688 1440,67.5359002 L1440,0 L-9.09494702e-13,0 L-9.09494702e-13,300 Z" id="Path-2" fill-opacity="0.9" fill="#1C7C54"></path>
             <path d="M2.27373675e-13,201.422877 C63.0187228,277.339586 165.323231,309.752842 306.913525,298.662647 C444.330805,287.899308 1127.54669,94.7128417 1248.67532,75.6795429 C1428.00747,47.5005535 1440.00117,49.6239334 1440.00117,49.6239334 C1440.00117,49.6239334 1440.00117,33.0826223 1440.00117,0 L2.27373675e-13,0 L2.27373675e-13,201.422877 Z" id="Path" fill-opacity="0.9" fill="#73E2A7"></path>
-            <g id="Lazy-Keto-Main-SVG" transform="translate(140.000000, 51.000000)" filter="url(#filter-1)">
-                <g>
-                    <g id="Lazy" fill-rule="nonzero">
-                        <use fill="#000000" xlink:href="#path-2"></use>
-                        <use fill="#F5FCEE" xlink:href="#path-2"></use>
-                    </g>
-                    <g id="Keto" fill-rule="nonzero">
-                        <use fill="#000000" xlink:href="#path-3"></use>
-                        <use fill="#F5FCEE" xlink:href="#path-3"></use>
-                    </g>
-                    <rect id="Rectangle" fill="#F5FCEE" x="175.281023" y="0.611111111" width="6.04717228" height="142.126984"></rect>
-                    <g id="Thinkless" fill-rule="nonzero">
-                        <use fill="#000000" xlink:href="#path-4"></use>
-                        <use fill="#F5FCEE" xlink:href="#path-4"></use>
-                    </g>
-                    <g id="Waitless" fill-rule="nonzero">
-                        <use fill="#000000" xlink:href="#path-5"></use>
-                        <use fill="#F5FCEE" xlink:href="#path-5"></use>
-                    </g>
-                    <g id="Weighless" fill-rule="nonzero">
-                        <use fill="#000000" xlink:href="#path-6"></use>
-                        <use fill="#F5FCEE" xlink:href="#path-6"></use>
-                    </g>
-                </g>
-            </g>
         </g>
     </g>
 </svg>

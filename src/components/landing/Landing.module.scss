@@ -2,17 +2,24 @@
 
 .landing {
   position: relative;
+
+  .waves {
+    height: 33vh;
+    width: 1440px;
+  }
+
   .logo {
-    svg {
-      height: 33vh;
-    }
+    position: absolute;
+    height: 143px;
+    width: 313px;
+    top: 5.66vh;
+    left: 10vw;
+    -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
   }
 }
 
 //TODO: Media queries for mobile. Animations. Scaling improvements.
-
-//Logo design is gonna need some more work but this is good enough to move on. Might need to just make a png
-//to resolve some of the alignment issues. Doing it all in CSS might be overkill
 
 .menu {
   position: absolute;
@@ -20,14 +27,15 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 60vw; //add better scaling with a base size and Calc
-  top: 50vh; //add better scaling with a base size and Calc
+  top: 49vh; //add better scaling with a base size and Calc
   left: 50%;
   transform: translateX(-50%);
 
   span {
     font-family: $primary-font;
+    font-weight: medium;
+    font-size: 22px !important;
     color: $grey;
-    font-size: 2vw; //add better scaling with a base size and Calc
     white-space: nowrap;
     text-align: center;
     position: relative;
@@ -37,8 +45,22 @@
   }
 
   .recipes-button {
-    width: 11vw;
-    margin: 0 4vw 0;
+    width: 12vw;
+    margin: 0 3.5vw 0;
+
+    div {
+      position: relative;
+      display: block;
+      height: 1vh;
+      background-color: $primary;
+      left: 0;
+      width: 0%;
+      transition: 0.3s ease;
+    }
+
+    &:hover > div {
+      width: 100%;
+    }
 
     svg {
       width: 100%;
@@ -46,9 +68,24 @@
       fill: none;
     }
   }
+
   .generate-button {
-    width: 11vw;
-    margin: 0 4vw 0;
+    width: 12vw;
+    margin: 0 3.5vw 0;
+
+    div {
+      position: relative;
+      display: block;
+      height: 1vh;
+      background-color: $primary;
+      left: 0;
+      width: 0%;
+      transition: 0.3s ease;
+    }
+
+    &:hover > div {
+      width: 100%;
+    }
 
     svg {
       width: 100%;
@@ -57,9 +94,23 @@
     }
   }
   .resources-button {
-    width: 11vw;
-    margin: 0 4vw 0;
+    width: 12vw;
+    margin: 0 3.5vw 0;
     fill: none;
+
+    div {
+      position: relative;
+      display: block;
+      height: 1vh;
+      background-color: $primary;
+      left: 0;
+      width: 0%;
+      transition: 0.3s ease;
+    }
+
+    &:hover > div {
+      width: 100%;
+    }
 
     svg {
       width: 100%;

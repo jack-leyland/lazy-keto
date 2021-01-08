@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../footer/Footer.module.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   Recipes,
@@ -9,6 +10,8 @@ import {
   Header,
 } from '../index';
 
+//Why doesn't landing page load when navigating back?
+
 function App() {
   return (
     <div className="app-container">
@@ -17,7 +20,7 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route component={WithHeader} />
         </Switch>
-        <Footer />
+          <Footer />
       </Router>
     </div>
   );
