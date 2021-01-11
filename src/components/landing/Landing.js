@@ -8,7 +8,7 @@ import {ReactComponent as RecipeIcon} from '../../assets/icons/recipe.svg';
 import {ReactComponent as Waves} from '../../assets/icons/logo-waves.svg';
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
-//TODO: Further hover animations?
+//TODO: VERTICAL SCALING! -Further hover animations?
 
 
 function Landing() {

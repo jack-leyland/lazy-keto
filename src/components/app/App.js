@@ -14,7 +14,7 @@ import {
 
 function App() {
   return (
-    <div className="app-container">
+    <div style={{ 'height': '100vh' }}>
       <Router>
         <Switch>
           <Route exact path="/" component={Landing} />
