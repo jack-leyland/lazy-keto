@@ -2,8 +2,12 @@ const router = require('express').Router();
 let Recipe = require('../models/recipe.model').Recipe;
 
 router.route('/').get((req, res) => {
-    Recipe.find()
-        .then(recipes => res.json(recipes))
+    Recipe.find().skip(Number(req.query.skip)).limit(Number(req.query.limit)) //why is this params on the client side and query on the server??? seems dumb but ok if it works i guess
+        .then(recipes => {
+            res.json(recipes)
+            console.log(req.params)
+            console.log(req.query)
+        })
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
