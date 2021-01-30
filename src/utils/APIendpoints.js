@@ -3,7 +3,7 @@
 const endpoints = {
     root: 'http://localhost:5000/api'
 }
-endpoints.allRecipes = endpoints.root + '/recipes';
+endpoints.getRecipes = endpoints.root + '/recipes';
 endpoints.addRecipe = endpoints.allRecipes + '/add';
 
 export { endpoints };

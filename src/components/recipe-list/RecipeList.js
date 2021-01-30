@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './RecipeList.module.scss';
-import { getAllRecipes } from '../../utils/index';
+import { getRecipes } from '../../utils/index';
 
 export default function RecipeList() {
     
@@ -10,7 +10,7 @@ export default function RecipeList() {
     })
    
     useEffect( () => {
-        getAllRecipes(state, setState);
+        getRecipes(state, setState);
     },[]);
 
     console.log(state); //debugging, remove later
