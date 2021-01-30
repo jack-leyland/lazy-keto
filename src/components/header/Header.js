@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import {ReactComponent as ResourcesIcon} from '../../assets/icons/resources.svg';
 import {ReactComponent as GenerateIcon} from '../../assets/icons/generate.svg';
 import {ReactComponent as RecipeIcon} from '../../assets/icons/recipe.svg';
@@ -10,7 +9,7 @@ import {ReactComponent as RecipeIcon} from '../../assets/icons/recipe.svg';
 
 function Header() {
   return (
-    <div className={styles.container}>
+    <div className={styles.header}>
       <NavBar />
     </div>
   );

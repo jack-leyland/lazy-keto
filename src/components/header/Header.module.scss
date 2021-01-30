@@ -1,5 +1,9 @@
 @import '../../index.scss';
 
+.header {
+  margin-bottom: 30px;
+}
+
 .nav-container {
   a {
     color: $grey;
@@ -20,7 +24,7 @@
     position: relative;
     float: left;
     left: 4.3vw;
-    top: 2vh;
+    top: 15px;
   }
 }
 
@@ -28,7 +32,7 @@
   position: relative;
   width: 400px;
   left: 13vw;
-  top: 1.5vh;
+  top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -45,7 +49,7 @@
 
 .recipes-button-inactive {
   .recipes-wrapper {
-    width: 100px;
+    width: 102px;
     height: 40px;
     position: relative;
 
@@ -80,6 +84,7 @@
 
 .recipes-button-active {
   .recipes-wrapper {
+    width: 102px;
     height: 40px;
     position: relative;
 
@@ -109,7 +114,7 @@
 
 .generate-button-inactive {
   .generate-wrapper {
-    width: 145px;
+    width: 150px;
     height: 40px;
     position: relative;
 
@@ -145,7 +150,7 @@
 
 .generate-button-active {
   .generate-wrapper {
-    width: 145px;
+    width: 150px;
     height: 40px;
     position: relative;
 
@@ -176,7 +181,7 @@
 
 .resources-button-inactive {
   .resources-wrapper {
-    width: 113px;
+    width: 122px;
     height: 40px;
     position: relative;
 
@@ -212,7 +217,7 @@
 
 .resources-button-active {
   .resources-wrapper {
-    width: 113px;
+    width: 122px;
     height: 40px;
     position: relative;
 

@@ -5,3 +5,5 @@ export { default as Resources } from './resources/Resources.js';
 export { default as Landing } from './landing/Landing.js';
 export { default as Footer } from './footer/Footer.js';
 export { default as Header } from './header/Header.js';
+export { default as RecipeList } from './recipe-list/RecipeList.js';
+export { default as Search } from './search-bar/Search.js';
