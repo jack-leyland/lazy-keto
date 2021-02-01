@@ -6,11 +6,15 @@ export default function RecipeList() {
     
     const [state, setState] = useState({
         loading: 0,
-        recipes:[]        
+        recipes: [],
+        search: null,
+        pgNum: 0,
+        skip: 0,
+        limit: 15        
     })
-   
+
     useEffect( () => {
-        getRecipes(state, setState);
+        getRecipes(state, setState)
     },[]);
 
     console.log(state); //debugging, remove later

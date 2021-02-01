@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { endpoints } from './index';
 
-export default function getRecipes(state, setState) { //When you will invitably have to limit how many recipes are fetched, this will be where you do it (if not in the API directly?)
+export default function getRecipes(state, setState) { 
     setState({ loading : true });
 
     axios.get(endpoints.getRecipes, {
         params: {
-            skip: 0,
-            limit: 15
+            skip: state.skip,
+            limit: state.limit,
+            search: state.search
         }
     })
         .then(res => { 
@@ -19,5 +20,6 @@ export default function getRecipes(state, setState) { //When you will invitably 
         .catch(error => {
             console.log(error);
         })
+
     console.log(endpoints.getRecipes) //debugging, remove later
 }
