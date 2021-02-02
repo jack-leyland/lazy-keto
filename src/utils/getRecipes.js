@@ -8,11 +8,12 @@ export default function getRecipes(state, setState) {
         params: {
             skip: state.skip,
             limit: state.limit,
-            search: state.search
+            searchString: state.searchString
         }
     })
         .then(res => { 
             setState({
+                ...state,
                 loading: false,
                 recipes: [...state.recipes, ...res.data],
             })

@@ -1,18 +1,40 @@
 const router = require('express').Router();
 let Recipe = require('../models/recipe.model').Recipe;
 
-router.route('/').get((req, res) => { 
+router.route('/').get((req, res) => {
     
-    if (req.query.search) { //this is likely going to need work to account for weird user input in the search field. Sticking with this for now until the thing is working 
+    var pgNum = parseInt(req.query.pgNum);
+    var size = parseInt(req.query.size);
+    var skip = size * (pgNum - 1);
+    var searchText = String(req.query.query);
+    var query = {};
 
-    } else {
-        Recipe.find().skip(Number(req.query.skip)).limit(Number(req.query.limit)) //why is this params on the client side and query on the server??? seems dumb but ok if it works i guess
-        .then(recipes => {
-            res.json(recipes)
-            console.log(req.query)
+    if (pgNum < 0 || pgNum === 0) {
+        let response = {"error" : true,"message" : "invalid page number, should start with 1"};
+        return res.json(response)
+    }
+
+    if (searchText !== "") { query = { $text: { $search: searchText }}; console.log(query)}
+
+    Recipe.aggregate([
+        {$match: query},
+        {$facet: {
+            "countResults" : [ {$group: {_id:null, totalResults:{$sum:1}}} ],
+            "paginatedResults": [
+            { $skip: skip },
+            { $limit: size }
+            ],
+        }},
+        {$unwind: "$countResults"},
+        {$project:{
+            totalResults: "$countResults.totalResults",
+            recipes: "$paginatedResults",
+         }}
+    ])
+        .then(result => {
+            res.json(result)
         })
         .catch(err => res.status(400).json('Error: ' + err));
-    }
 
 });
 
