@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.panel-container {
+  position: relative;
+
+  width: 925px;
+  height: 639px;
+  left: 460px;
+
+  .soup-container {
+    width: 185px;
+    height: 205px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -102.5px 0 0 -92.5px;
+
+    .soup-text {
+      font-family: $primary-font;
+      overflow: visible;
+      white-space: nowrap;
+      color: rgba(68, 68, 68, 0.65);
+    }
+  }
+}

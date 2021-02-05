@@ -10,7 +10,14 @@ router.route('/').get((req, res) => {
     var query = {};
 
     if (pgNum < 0 || pgNum === 0) {
-        let response = {"error" : true,"message" : "invalid page number, should start with 1"};
+        let response = {
+            success: false,
+            failureType: 1, 
+            message: "API Error: Invalid page number, pgNum must be greater than 0",
+            totalResults: 0,
+            recipes: null
+
+        };;
         return res.json(response)
     }
 
@@ -32,9 +39,28 @@ router.route('/').get((req, res) => {
          }}
     ])
         .then(result => {
-            res.json(result)
+           if (!result[0]) {
+                let response = {
+                    success: false,
+                    failureType: 2, 
+                    message: "No matching recipes found",
+                    totalResults: 0,
+                    recipes: null
+
+                };
+                return res.json(response)
+            }
+            var formattedResult = {
+                success: true,
+                failureType: null,
+                message: null, 
+                totalResults: result[0].totalResults,
+                recipes: result[0].recipes
+            }
+            
+            res.json(formattedResult)
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json('Error: ' + err))
 
 });
 

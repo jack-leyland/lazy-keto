@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './Search.module.scss';
 import {ReactComponent as SearchIcon} from '../../assets/icons/magnify-glass.svg';
 

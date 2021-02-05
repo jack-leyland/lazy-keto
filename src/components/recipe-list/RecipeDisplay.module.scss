@@ -1,0 +1,103 @@
+@import '../../index.scss';
+
+.list-container {
+  float: left;
+  position: absolute;
+  top: 60px;
+  left: 4.3vw;
+  width: 385px;
+  height: 580px;
+  font-family: $primary-font;
+  color: $grey;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  overscroll-behavior-y: contain;
+
+  .loading {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+.list-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.recipe-listing {
+  background: rgba(68, 68, 68, 0.09);
+  display: flex;
+  border-radius: 7px;
+  width: 385px;
+  height: 30px;
+  font-weight: regular;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.recipe-listing-blank {
+  display: flex;
+  border-radius: 7px;
+  width: 385px;
+  height: 30px;
+  font-weight: regular;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.name {
+  height: 30px;
+  width: 200px;
+  text-align: left;
+  padding-left: 30px;
+  vertical-align: middle;
+  line-height: 30px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
+
+.info-container {
+  display: flex;
+  justify-content: left;
+  height: 30px;
+  font-size: 11px;
+  .type {
+    width: 51px;
+    margin-top: auto;
+    padding-right: 4px;
+    border-right: solid 1px $grey;
+    text-align: right;
+  }
+  .clock {
+    width: 14px;
+    height: 14px;
+    margin-top: auto;
+    margin-left: 3px;
+  }
+  .time {
+    margin-top: auto;
+    margin-left: 3px;
+    width: 65px;
+    text-align: left;
+  }
+}
+
+.chevron {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+  stroke: $grey;
+}
+
+.soup-container {
+  width: 185px;
+  height: 205px;
+  float: right;
+  top: 50%;
+}
