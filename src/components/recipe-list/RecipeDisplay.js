@@ -13,6 +13,7 @@ export default function RecipeDisplay(props) {
             lastRecipeElemRef={props.lastRecipeElemRef} 
             />
             <>{props.listState.loading && <RecipeLoader/>}</> {/*super overkill loader I found online, will prob change to some more thematic thing when the app is done*/}
+            <>{props.listState.noSearchResults && <div className={styles['no-results']}>No matching recipes :(</div>}</>
         </div>
     )
 };
@@ -33,7 +34,6 @@ function RecipeListings(props) {
         </div>
     })
 }
-
 
 
   

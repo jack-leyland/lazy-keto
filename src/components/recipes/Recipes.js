@@ -11,15 +11,13 @@ export default function Recipes() {
 
   const [searchParams, setSearchParams] = useState({
     pgNum: 1,
-    size: 30,
     query: ''
 })
 
   const listState = useRecipeSearch(searchParams);
   const observer = useRef();
- 
-  function handleSearchChange(newSearchString) {
-    console.log('search changed')
+
+  function updateSearchQuery(newSearchString) {
     setSearchParams({
       ...searchParams,
       pgNum: 1,
@@ -42,9 +40,11 @@ export default function Recipes() {
     if(node) observer.current.observe(node)
   }, [searchParams, listState.loading, listState.hasMore]);
 
+  console.log(listState)
+
   return <div className={styles.recipes}>
     <Search 
-      handleSearchChange={handleSearchChange} 
+      updateSearchQuery={updateSearchQuery} 
       searchString={searchParams.query}
       />
     <RecipeDisplay 

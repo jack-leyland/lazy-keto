@@ -9,7 +9,7 @@ export default function BookLoader() {
                 <div className={styles["book__page"]}></div>
                 <div className={styles["book__page"]}></div>
             </div>
-            
+            <div className={styles.text}>Finding the good stuff...</div>
         </div>
     )
 }

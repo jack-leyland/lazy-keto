@@ -1,7 +1,7 @@
 @import '../../index.scss';
 
 $peter-river: $background;
-$clouds: $primary;
+$clouds: $primary-dark;
 
 .loader {
   position: relative;
@@ -9,6 +9,14 @@ $clouds: $primary;
   height: 40px;
   background: $peter-river;
   border-radius: 12px;
+  margin-top: 10px;
+}
+
+.text {
+  font-family: $primary-font;
+  color: rgba(68, 68, 68, 0.69);
+  text-align: center;
+  margin-top: 18px;
 }
 
 .book {

@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import styles from './Search.module.scss';
 import {ReactComponent as SearchIcon} from '../../assets/icons/magnify-glass.svg';
-
+import debounce from 'lodash/debounce'
 
 export default function Search(props) {
+    const [search, setSearch] = useState('');
 
-    function handleSearchChange(event) {
-        props.handleSearchChange(event.target.value)
-    }
-    // console.log('Searchbar props: ')
-    // console.log(props)
+  
+    const sendQueryToParent = useCallback(
+        debounce(search => props.updateSearchQuery(search), 700),
+        []
+    )
+
+    useEffect(() => {
+        sendQueryToParent(search)
+    },[search, sendQueryToParent])
+
     return (
         <div className={styles.search}>
             <form id='search' className={styles['search-form']}>
@@ -20,7 +26,7 @@ export default function Search(props) {
                     placeholder='Search for recipes...' 
                     maxLength='120'
                     value={props.query}
-                    onChange={handleSearchChange}
+                    onChange={e => setSearch(e.target.value)}
                     />
                 </div>
             </form>
@@ -28,4 +34,5 @@ export default function Search(props) {
     )
 
 }
+
 
