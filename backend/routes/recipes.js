@@ -4,7 +4,7 @@ let Recipe = require('../models/recipe.model').Recipe;
 router.route('/').get((req, res) => {
     
     var pgNum = parseInt(req.query.pgNum);
-    var size = parseInt(req.query.size);
+    var size = 30;
     var skip = size * (pgNum - 1);
     var searchText = String(req.query.query);
     var query = {};
@@ -57,7 +57,6 @@ router.route('/').get((req, res) => {
                 totalResults: result[0].totalResults,
                 recipes: result[0].recipes
             }
-            
             res.json(formattedResult)
         })
         .catch(err => res.status(400).json('Error: ' + err))
